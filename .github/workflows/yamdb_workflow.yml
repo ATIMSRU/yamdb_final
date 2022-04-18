@@ -29,12 +29,12 @@ jobs:
      needs: tests
      steps:
        - name: Clean from last attempt
-         script: |
-          sudo docker stop $(docker ps -a -q)
-          sudo docker rm $(docker ps -a -q)
-          sudo docker rmi $(docker images -q)
-          sudo docker volume rm $(docker volume ls -q)
-          sudo systemctl reload-or-restart nginx
+         run: |
+            sudo docker stop $(docker ps -a -q)
+            sudo docker rm $(docker ps -a -q)
+            sudo docker rmi $(docker images -q)
+            sudo docker volume rm $(docker volume ls -q)
+            sudo systemctl reload-or-restart nginx
        - name: Check out the repo
          uses: actions/checkout@v2 
        - name: Set up Docker Buildx
