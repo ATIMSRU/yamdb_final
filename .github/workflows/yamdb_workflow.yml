@@ -25,6 +25,10 @@ jobs:
         #cd api_yamdb/
         #python manage.py test
         python -m venv env
+        pwd
+        ls
+        cd env
+        ls
         source env/Scripts/activate
         pip install pytest
         pytest
