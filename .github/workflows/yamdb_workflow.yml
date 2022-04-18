@@ -32,8 +32,10 @@ jobs:
      steps:
        - name: Clean from last attempt
          run: |
-            sudo docker container stop --force $(docker container ps -a -q)
-            sudo docker container rm $(docker container ps -a -q)
+            #sudo docker container stop $(docker container ps -a -q)
+            sudo systemctl status docker
+            sudo docker rm -f $(docker ps -aq)
+            #sudo docker container rm $(docker container ps -a -q)
             sudo docker image rmi $(docker images -q)
             sudo docker volume rm $(docker volume ls -q)
             sudo systemctl reload-or-restart nginx
