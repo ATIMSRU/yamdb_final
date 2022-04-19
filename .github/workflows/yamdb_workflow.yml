@@ -30,15 +30,6 @@ jobs:
      runs-on: ubuntu-latest
      needs: tests
      steps:
-#        - name: Clean from last attempt
-#          run: |
-#             sudo docker container stop $$(docker container ps -a -q)
-#             sudo systemctl status docker
-#             #sudo docker rm -f $(docker ps -aq)
-#             sudo docker container rm $$(docker container ps -a -q)
-#             sudo docker image rmi $$(docker images -q)
-#             sudo docker volume rm $$(docker volume ls -q)
-#             sudo systemctl reload-or-restart nginx
        - name: Check out the repo
          uses: actions/checkout@v2 
        - name: Set up Docker Buildx
@@ -58,6 +49,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
@@ -78,24 +70,7 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker-compose up -d
             sudo docker-compose exec -T web python manage.py collectstatic --no-input
- 
-#   send_message:
-#     runs-on: ubuntu-latest
-#     needs: deploy
-#     steps:
-#       - name: Send mail
-#         uses: dawidd6/action-send-mail@v3
-#         with:
-#           server_address: smtp.yandex.ru
-#           server_port: 465
-#           username: ${{secrets.MAIL_USERNAME}}
-#           password: ${{secrets.MAIL_PASSWORD}}
-#           subject: Github Actions job result
-#           to: test.tarasow@yandex.ru
-#           from: test.tarasow@yandex.ru
-#           secure: true
-#           body: Build job of ${{github.repository}} completed successfully!
-  
+   
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
