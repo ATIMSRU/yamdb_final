@@ -1,4 +1,5 @@
 [GITHUB-BADGE](https://github.com/ATIMSRU/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master&event=push)
+![AppVeyor](https://img.shields.io/appveyor/build/atimsru/api_yamdb)
 
 # Проект «api_yamdb»
 
