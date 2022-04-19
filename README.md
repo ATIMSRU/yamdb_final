@@ -1,6 +1,8 @@
 ![GITHUB-BADGE](https://github.com/ATIMSRU/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master&event=push)
 
+
 # Проект «api_yamdb»
+_доступен тут [api](178.154.198.254/api/v1/) и тут [redoc](178.154.198.254/redoc/)_
 
 ## 1. [Описание](#1)
 ## 2. [Установка](#2)
