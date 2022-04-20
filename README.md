@@ -1,17 +1,18 @@
 ![GITHUB-BADGE](https://github.com/ATIMSRU/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master&event=push)
 
+[![GITHUB-BADGE](https://github.com/ATIMSRU/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master&event=push)](http://178.154.198.254/redoc/)
 
 # Проект «api_yamdb»
 ### _доступен тут [api](http://178.154.198.254/api/v1/) и тут [redoc](http://178.154.198.254/redoc/)_
 
-## 1. [Описание](#1)
+## 1. [Описание](#1) <a id=0></a>
 ## 2. [Установка](#2)
 ## 3. [Примеры](#3)
 ## 4. [Aвтор](#4)
 ## 5. [Технологии](#5)
 
 
-## 1 Описание <a id=1></a>
+## 1 [Описание](#0) <a id=1></a>
 
 api_yamdb это API для приложеия YaMDb.
 YaMDb это приложение-социальная сеть, которое собирает отзывы (Review) пользователей на произведения (Titles).
